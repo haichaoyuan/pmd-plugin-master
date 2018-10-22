@@ -1,0 +1,51 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" 
+xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+<!--BlockBuild-->
+	<f:entry field="blockBuild" title="Block问题控制构建状态:&lt;br / &gt;(If Block rules make build fail)">
+		<f:booleanRadio default="false"/>
+	</f:entry>
+<f:advanced>
+    <!-- 暂时将配置页面隐藏-->
+    <f:entry title="结果报告路径:&lt;br / &gt;(Report path)" field="reportPath">
+        <f:textbox default="${descriptor.defaultReportPath()}"/>
+    </f:entry>
+
+    <f:entry title="结果报告文件名:&lt;br / &gt;(Report FileName)" field="reportFileName">
+        <f:textbox default="testReport.html"/>
+    </f:entry>
+
+
+	<!--SetCSP-->
+	<f:entry field="csp" title="开通引用JS、CSS的HTML页面访问权限:&lt;br / &gt;(Open access to HTML with JS or CSS)">
+		<f:booleanRadio default="true"/>
+	</f:entry>
+	<!--Configuration-->
+	<f:entry field="configuration" title="规则配置信息:&lt;br / &gt;(Rule configuration content)">
+		<f:textarea />
+	</f:entry>
+	
+	<!--build with parameter-->
+	<f:entry field="buildWithParameter" title="参数化构建：&lt;br / &gt;(Build with parameter)">
+		<f:textbox/>
+	</f:entry>
+	
+	<!--JVM-->
+	<f:entry field="jvm" title="JVM参数配置:&lt;br / &gt;(JVM argument)">
+		<f:textbox default="-Xms1g -Xmx1g -XX:MaxPermSize=512m"/>
+	</f:entry>
+	
+	<!-- JDK -->
+	 <j:set var="jdks"  value="${app.JDKs}" />
+	  <f:entry field="jdk" title="JDK版本设置:&lt;br / &gt;(JDK version)">
+	    <select class="setting-input validated" name="fireLine.jdk" checkUrl="'${rootURL}/defaultJDKCheck?value='+this.value">
+	      <option>${%InheritFromJob}</option>
+	      <j:forEach var="inst" items="${jdks}">
+	        <f:option field="jdk" selected="${inst.name==instance.getJdk()}" value="${inst.name}">${inst.name}</f:option>
+	      </j:forEach>
+	    </select>
+	  </f:entry>
+</f:advanced>
+</j:jelly>
+
