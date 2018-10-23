@@ -36,7 +36,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
     //    private String config;
 //    private String reportPath;
     private String jdk;
-    private static String mJarFile = "p3c-pmd-2.0.1.jar";
+    private static String mJarFile = "xh-p3c-pmd-2.0.0.jar";
     private static String jarFile = "/lib/" + mJarFile;
     public final static String platform = System.getProperty("os.name");
     private FireLineScanCodeAction fireLineAction = new FireLineScanCodeAction();
@@ -98,6 +98,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
             computeJdkToUse(build, workspace, listener, env);
             // get path of fireline.jar
             jarPath = getFireLineJar(listener);
+            listener.getLogger().println("[FireLineBuilder] jarPath:" + jarPath);
             // check params
             listener.getLogger().println("[FireLineBuilder] projectPath:" + projectPath);
             if (!FileUtils.existFile(projectPath)) {
@@ -119,7 +120,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
 //                    cmd = cmd + " config=" + confFile;
 //                }
 //            }
-            listener.getLogger().println("[FireLineBuilder] cmd:" + cmd);
+
             if (buildWithParameter != null && buildWithParameter.contains("false")) {
                 listener.getLogger().println("Build without FireLine !!!");
             } else {
@@ -132,7 +133,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                     //listener.getLogger().println("FireLine command="+cmd);
                     //使用  pmd 进行线上扫描
 //                    cmd = "java -cp"+jarPath +" net.sourceforge.pmd.PMD -d "+projectPath + " -R java-xh-comment -f html -r report/pmd.html";
-                    cmd = "java " + "" + " -jar " + jarPath + " -d " + projectPath + " -R java-xh-comment -f xml -r " + pmdXmlFilePath;
+                    cmd = "java " + "" + " -jar " + jarPath + " -d " + projectPath + " -R java-xh-jenkins-block -f xml -r " + pmdXmlFilePath;
                     listener.getLogger().println("[FireLineBuilder] cmd:" + cmd);
                     exeCmd(cmd, listener);
                     // if block number of report is not 0,then this build is set Failure.
@@ -204,6 +205,10 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
         return 0;
     }
 
+    /** 判断 violation 数
+     * @param reportPath
+     * @return
+     */
     private int getBlockNum(String reportPath) {
         String xmlPath = null;
         DocumentBuilderFactory foctory = DocumentBuilderFactory.newInstance();
@@ -225,24 +230,19 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
         return 0;
     }
 
-    /**
-     * 拷贝项目lib 下的jar包，到？
-     *
-     * @param listener
-     * @return
-     */
-    private String getFireLineJar(TaskListener listener) {
+    public String getFireLineJar(TaskListener listener) {
         String oldPath = null;
         String newPath = null;
         if (platform.contains("Linux")) {
             oldPath = FireLineBuilder.class.getResource(jarFile).getFile();
+
             listener.getLogger().println("[FireLineBuilder] linux oldPayh:" + oldPath);
-            if (!oldPath.contains("file:")) {//存在 没有file: 的情况
+            if (!oldPath.contains("file:")) {
                 return oldPath;
             }
             int index1 = oldPath.indexOf("file:");
-            int index2 = oldPath.indexOf(mJarFile);
-            newPath = oldPath.substring(index1 + 5, index2) + mJarFile;
+            int index2 = oldPath.indexOf("lib");
+            newPath = oldPath.substring(index1 + 5, index2 + 3) + File.separator + mJarFile;
         } else {
             oldPath = new File(FireLineBuilder.class.getResource(jarFile).getFile()).getAbsolutePath();
             listener.getLogger().println("[FireLineBuilder] unlinux oldPayh:" + oldPath);
@@ -250,15 +250,16 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                 return oldPath;
             }
             int index1 = oldPath.indexOf("file:");
-            int index2 = oldPath.indexOf(mJarFile);
-            newPath = oldPath.substring(index1 + 6, index2) + mJarFile;
+            int index2 = oldPath.indexOf("lib");
+            newPath = oldPath.substring(index1 + 5, index2 + 3) + File.separator + mJarFile;
         }
-        listener.getLogger().println("[FireLineBuilder] newPath:" + newPath);
-        try {
-            JarCopy.copyJarResource(jarFile, newPath);
-        } catch (Exception e) {
-            // TODO 自动生成的 catch 块
-            e.printStackTrace();
+        if (!new File(newPath).exists()) {
+            try {
+                JarCopy.copyJarResource(jarFile, newPath);
+            } catch (Exception e) {
+                // TODO 自动生成的 catch 块
+                e.printStackTrace();
+            }
         }
         return newPath;
     }
@@ -327,7 +328,9 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
 
     @Override
     public Action getProjectAction(AbstractProject<?, ?> project) {
-        return fireLineAction;
+        //此处 不返回 fireLineAction，则在左侧和Project结果面板不产生火图标
+        return super.getProjectAction(project);
+//        return fireLineAction;
     }
 
 

@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/PmdResult.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/PmdResultAction.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/BuilderUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/FileUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/FireLineTarget.java" charset="UTF-8" />
@@ -12,7 +13,11 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/help-blockBuild.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/help-csp.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/help-jdk.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/lib/p3c-pmd-2.0.0.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/lib/p3c-pmd-2.0.1.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/lib/p3c-pmd-2.0.2.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

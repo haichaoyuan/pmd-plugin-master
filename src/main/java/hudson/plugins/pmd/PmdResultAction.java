@@ -16,7 +16,7 @@ import hudson.plugins.analysis.core.PluginDescriptor;
  * <p>
  * Moreover, this class renders the PMD result trend.
  * </p>
- *
+ * 控制PMD结果的声明周期，这种动作持久PMD分析的结果，并在构建页面显示结果
  * @author Ulli Hafner
  */
 public class PmdResultAction extends AbstractResultAction<PmdResult> {

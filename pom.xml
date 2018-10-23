@@ -8,7 +8,7 @@
     <relativePath>../analysis-pom</relativePath>
   </parent>
 
-  <artifactId>pmd</artifactId>
+  <artifactId>xh-pmd</artifactId>
   <packaging>hpi</packaging>
   <name>Xuehai PMD Plug-in</name>
   <version>4.0.0</version>
