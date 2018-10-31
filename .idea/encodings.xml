@@ -13,11 +13,10 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/help-blockBuild.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/help-csp.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/help-jdk.html" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/lib/p3c-pmd-2.0.0.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/lib/p3c-pmd-2.0.1.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/lib/p3c-pmd-2.0.2.jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.1.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.1.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/ruleset/ali-pmd.xml" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
