@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pmd.iml" filepath="$PROJECT_DIR$/pmd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xh-pmd.iml" filepath="$PROJECT_DIR$/xh-pmd.iml" />
     </modules>
   </component>
 </project>

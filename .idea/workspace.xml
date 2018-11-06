@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9b67035-5aa5-47e3-aa6b-3c0b1bf82add" name="Default Changelist" comment="1. [功能]增加规则">
+    <list default="true" id="b9b67035-5aa5-47e3-aa6b-3c0b1bf82add" name="Default Changelist" comment="1. [版本] 4.0.1">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/VariableReplacerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/VariableReplacerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.2.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,14 +29,14 @@
     <session id="-224253440">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -40,10 +45,10 @@
           <entry key="checkstyle" value="2" />
           <entry key="class" value="28" />
           <entry key="fbprefs" value="2" />
-          <entry key="gitignore" value="5" />
+          <entry key="gitignore" value="6" />
           <entry key="html" value="24" />
           <entry key="iml" value="4" />
-          <entry key="java" value="138" />
+          <entry key="java" value="140" />
           <entry key="jelly" value="31" />
           <entry key="log" value="1" />
           <entry key="md" value="3" />
@@ -55,7 +60,7 @@
           <entry key="properties" value="23" />
           <entry key="sh" value="3" />
           <entry key="txt" value="5" />
-          <entry key="xml" value="18" />
+          <entry key="xml" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -64,41 +69,96 @@
           <entry key="HTML" value="24" />
           <entry key="IDEA_MODULE" value="4" />
           <entry key="Image" value="6" />
-          <entry key="JAVA" value="138" />
+          <entry key="JAVA" value="140" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="60" />
+          <entry key="PLAIN_TEXT" value="61" />
           <entry key="Properties" value="23" />
-          <entry key="XML" value="20" />
+          <entry key="XML" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="19" />
-          <entry key="java" value="1203" />
+          <entry key="java" value="1899" />
           <entry key="jelly" value="47" />
           <entry key="properties" value="1" />
-          <entry key="txt" value="120" />
-          <entry key="xml" value="183" />
+          <entry key="txt" value="123" />
+          <entry key="xml" value="190" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1203" />
-          <entry key="PLAIN_TEXT" value="186" />
+          <entry key="JAVA" value="1899" />
+          <entry key="PLAIN_TEXT" value="189" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="183" />
+          <entry key="XML" value="190" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-446">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="221">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1596#1597#0" expanded="true" />
+                <element signature="e#1648#1649#0" expanded="true" />
+                <element signature="e#1710#1711#0" expanded="true" />
+                <element signature="e#1752#1753#0" expanded="true" />
+                <element signature="e#1811#1812#0" expanded="true" />
+                <element signature="e#1872#1873#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/VariableReplacerUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ruleset/ali-pmd.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -134,6 +194,7 @@
       <find>p'm</find>
       <find>jarFile</find>
       <find>mJarFile</find>
+      <find>buildWithParameter</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,8 +231,9 @@
         <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/PmdResultAction.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/resources/ruleset/ali-pmd.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/VariableReplacerUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
@@ -204,6 +266,42 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="access-modifier-checker" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="animal-sniffer" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="compiler" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="deploy" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="findbugs" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
           <item name="hpi" type="36feed69:MavenProjectsStructure$PluginNode" />
         </path>
       </expand>
@@ -211,8 +309,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1680" />
-    <option name="y" value="31" />
+    <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="973" />
   </component>
@@ -222,8 +319,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pmd" type="58d84e3e:PackageViewProjectNode" />
+              <item name="xh-pmd" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,26 +347,7 @@
               <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
               <item name="pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -269,12 +357,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="pmd-2&#9;FILE&#9;file:///Users/hc/IdeaProjects/gitProject/pmd-plugin-master/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar&#10;pmd&#9;FILE&#9;file:///Users/hc/IdeaProjects/gitProject/pmd-plugin-master/src/main/webapp/icons/pmd-48x48.png&#10;pmd-&#9;FILE&#9;file:///Users/hc/IdeaProjects/gitProject/pmd-plugin-master/src/main/webapp/icons/pmd-48x48.png&#10;PmdWorkflowTest&#9;PSI&#9;JAVA://hudson.plugins.pmd.PmdWorkflowTest" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540949767593" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541489713397" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -408,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540949472151</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1. [版本] 4.0.1">
+      <created>1540949841087</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540949841087</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -438,17 +533,46 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1680" y="31" width="1680" height="973" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="973" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24631101" visible="true" weight="0.22649573" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24631101" visible="true" weight="0.22893773" />
       <window_info id="Structure" order="1" sideWeight="0.753689" side_tool="true" weight="0.27934936" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Thumbnails" weight="0.32970297" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3280363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49941587" visible="true" weight="0.48240635" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4449489" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.71736664" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005841" side_tool="true" weight="0.43813848" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3291714" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3280363" />
+      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32970297" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49725273" weight="0.24908425" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" visible="true" weight="0.18437119" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5050505" side_tool="true" weight="0.24591121" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24631101" visible="true" weight="0.22893773" />
+      <window_info id="Structure" order="1" sideWeight="0.753689" side_tool="true" weight="0.27934936" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280363" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49941587" weight="0.43813848" />
@@ -458,47 +582,18 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.71736664" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005841" side_tool="true" weight="0.43813848" />
-      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3291714" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3291714" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3280363" />
+      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32970297" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49725273" weight="0.24948736" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" visible="true" weight="0.25702077" />
+      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" visible="true" weight="0.18437119" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5050505" side_tool="true" weight="0.24591121" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.24631101" visible="true" weight="0.19009584" />
-      <window_info id="Structure" order="1" sideWeight="0.753689" side_tool="true" weight="0.27934936" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.32970297" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32871288" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.43861386" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4449489" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.7178218" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32970297" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32871288" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49725273" weight="0.24948736" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.49725273" visible="true" weight="0.24600638" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.50274724" side_tool="true" weight="0.32740945" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -525,7 +620,8 @@
     <MESSAGE value="1. [功能]增加规则&#10;1.1 long或者Long初始赋值时，必须使用大写的L，不能是小写的l，小写容易跟数字混淆，造成误解。&#10;1.2 所有的包装类对象之间值的比较，全部使用equals方法比较。&#10;1.3 方法需要增加完备注释，参数的说明，返回值的说明都需要&#10;1.4 Object的equals方法容易抛空指针异常，应使用常量或确定有值的对象来调用equals。" />
     <MESSAGE value="1. [功能]增加规则" />
     <MESSAGE value="1. [功能]增加规则&#10;1.1 long或者Long初始赋值时，必须使用大写的L，不能是小写的l，小写容易跟数字混淆，造成误解。&#10;1.2 所有的包装类对象之间值的比较，全部使用equals方法比较。&#10;1.3 方法需要增加完备注释，参数的说明，返回值的说明都需要&#10;1.4 Object的equals方法容易抛空指针异常，应使用常量或确定有值的对象来调用equals。&#10;1.5 常量命名应该全部大写，单词间用下划线隔开&#10;1.6 所有的枚举类型字段必须要有注释，说明每个数据项的用途。&#10;1.7 所有编程相关的命名均不能以下划线或美元符号开始&#10;1.8 抽象类命名使用Abstract或Base开头&#10;1.9 方法名、参数名、成员变量、局部变量都统一使用lowerCamelCase，必须遵从驼峰形式&#10;1.10 不允许任何魔法值（即未经定义的常量）直接出现在代码中。&#10;1.11 中" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. [功能]增加规则&#10;1.1 long或者Long初始赋值时，必须使用大写的L，不能是小写的l，小写容易跟数字混淆，造成误解。&#10;1.2 所有的包装类对象之间值的比较，全部使用equals方法比较。&#10;1.3 方法需要增加完备注释，参数的说明，返回值的说明都需要&#10;1.4 Object的equals方法容易抛空指针异常，应使用常量或确定有值的对象来调用equals。&#10;1.5 常量命名应该全部大写，单词间用下划线隔开&#10;1.6 所有的枚举类型字段必须要有注释，说明每个数据项的用途。&#10;1.7 所有编程相关的命名均不能以下划线或美元符号开始&#10;1.8 抽象类命名使用Abstract或Base开头&#10;1.9 方法名、参数名、成员变量、局部变量都统一使用lowerCamelCase，必须遵从驼峰形式&#10;1.10 不允许任何魔法值（即未经定义的常量）直接出现在代码中。&#10;1.11 中" />
+    <MESSAGE value="1. [版本] 4.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. [版本] 4.0.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -553,34 +649,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/help-reportPath.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/PmdColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/PmdAnnotationsAggregator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/hudson/plugins/pmd/parser/BugSerializeModelTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/parser/Bug.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -611,13 +679,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/Tmp.java" />
     <entry file="file://$PROJECT_DIR$/work/workspace/test/pmd.xml" />
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar!/net/sourceforge/pmd/lang/Language.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar!/net/sourceforge/pmd/lang/Language.class" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/icons/fireline_16x16.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -765,20 +827,7 @@
     <entry file="file://$PROJECT_DIR$/work/jobs/JenkinsAndroidDemo2/workspace/pmd.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ruleset/ali-pmd.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar!/rulesets/java/ali-oop.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar!/rulesets/java/ali-oop.xml" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/org/w3c/dom/Document.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -804,13 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="292" column="18" selection-start-line="292" selection-start-column="18" selection-end-line="292" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -841,16 +883,6 @@
     <entry file="file://$PROJECT_DIR$/Jenkinsfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="244" column="21" lean-forward="true" selection-start-line="244" selection-start-column="21" selection-end-line="244" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineTarget.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -862,10 +894,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ruleset/ali-pmd.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/fireline/VariableReplacerUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1596#1597#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1752#1753#0" expanded="true" />
+            <element signature="e#1811#1812#0" expanded="true" />
+            <element signature="e#1872#1873#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-446">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="221">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
         </state>
       </provider>
     </entry>

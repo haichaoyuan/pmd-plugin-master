@@ -25,6 +25,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Sample {@link Builder}.
@@ -36,7 +38,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
     //    private String config;
 //    private String reportPath;
     private String jdk;
-    private static String mJarFile = "xh-p3c-pmd-2.0.1.jar";
+    private static String mJarFile = "xh-p3c-pmd-2.0.2.jar";
     private static String jarFile = "/lib/" + mJarFile;
     private static String mAliPmdFile = "ali-pmd.xml";
     private static String aliPmdFile = "/ruleset/" + mAliPmdFile;
@@ -79,14 +81,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
             String cmd = null;
             String buildWithParameter = fireLineTarget.getBuildWithParameter();
             buildWithParameter = VariableReplacerUtil.checkEnvVars(build, listener, buildWithParameter);
-            reportFileNameTmp = VariableReplacerUtil.checkEnvVars(build, listener, reportFileNameTmp);
-//            config = fireLineTarget.getConfiguration();
-//            reportPath = VariableReplacerUtil.checkEnvVars(build, listener, fireLineTarget.getReportPath());
-            //listener.getLogger().println("reportPath="+reportPath);
-//            boolean IsExist = FileUtils.createDir(reportPath);
-//            if (!IsExist) {
-//                listener.getLogger().println("结果报告路径创建失败，请确认当前Jenkins用户的权限");
-//            }
+
             if (fireLineTarget.getCsp()) {
                 listener.getLogger().println("CSP=" + System.getProperty("hudson.model.DirectoryBrowserSupport.CSP"));
             }
@@ -129,16 +124,15 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                 listener.getLogger().println("Build without FireLine !!!");
             } else {
                 String pmdXmlFilePath = projectPath + "/pmd.xml";
-                // debug/
-                // if (checkFireLineJdk(getProject(build).getJDK())) {
                 if (new File(jarPath).exists()) {
-                    // execute fireline
                     listener.getLogger().println("FireLine start scanning...");
+                    //add 1105: 查看文件下的所有 src 文件
+                    String destFilePath = getDestFileList(projectPath);
                     //listener.getLogger().println("FireLine command="+cmd);
                     //使用  pmd 进行线上扫描
 //                    cmd = "java -cp"+jarPath +" net.sourceforge.pmd.PMD -d "+projectPath + " -R java-xh-comment -f html -r report/pmd.html";
 //                    cmd = "java " + "" + " -jar " + jarPath + " -d " + projectPath + " -R java-xh-jenkins-block -f xml -r " + pmdXmlFilePath;
-                    cmd = "java -jar " + jarPath + " -d " + projectPath + "/app/src -R " + ruleSetPath + " -f xml -r " + pmdXmlFilePath;
+                    cmd = "java -jar " + jarPath + " -d " + destFilePath + " -R " + ruleSetPath + " -f xml -r " + pmdXmlFilePath;
                     listener.getLogger().println("[FireLineBuilder] cmd:" + cmd);
                     exeCmd(cmd, listener);
                     // if block number of report is not 0,then this build is set Failure.
@@ -157,6 +151,63 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                 }
             }
         }
+    }
+
+    /**
+     * 获取目标文件列表，单模块的 app/src/main ,多模块的 module_name/src/main
+     *
+     * @param projectPath 项目路径
+     * @return 获取目标文件列表
+     */
+    private String getDestFileList(String projectPath) {
+        List<String> destFileList = new ArrayList<>();
+        File file = new File(projectPath);
+
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            if (files != null) {
+                for (int i = 0; i < files.length; i++) {
+                    File tmpFile = files[i];
+                    //[1].剔除非文件夹
+                    if (!tmpFile.isDirectory()) {
+                        continue;
+                    }
+                    // [2]. 取文件夹的子文件列表
+                    File[] tmpFiles2 = tmpFile.listFiles();
+                    if (tmpFiles2 != null) {
+                        for (int j = 0; j < tmpFiles2.length; j++) {
+                            File file2 = tmpFiles2[j];
+                            //[3].文件夹且名为 src 子文件夹名为 main
+                            if (file2.isDirectory() && "src".equals(file2.getName())) {
+                                File[] tmpFiles3 = file2.listFiles();
+                                if (tmpFiles3 != null) {
+                                    for (int k = 0; k < tmpFiles3.length; k++) {
+                                        File file4 = tmpFiles3[k];
+                                        //[3].文件夹且名为 src 子文件夹名为 main
+                                        if (file4.isDirectory() && "main".equals(file4.getName())) {
+                                            destFileList.add(file4.getAbsolutePath());
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if(destFileList.size() == 0){
+            //上述一串操作没有找到，此处用作兜底
+            destFileList.add(projectPath);
+        }
+        //此处 list -> String
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < destFileList.size(); i++) {
+            if(i != 0){
+                stringBuilder.append(",");
+            }
+            stringBuilder.append(destFileList.get(i));
+        }
+        return stringBuilder.toString();
     }
 
     private void initEnv() {

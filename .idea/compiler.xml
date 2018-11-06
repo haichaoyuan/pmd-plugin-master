@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pmd" />
+        <module name="xh-pmd" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="pmd" target="1.7" />
+      <module name="xh-pmd" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
