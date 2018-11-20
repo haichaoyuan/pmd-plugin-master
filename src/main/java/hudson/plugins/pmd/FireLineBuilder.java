@@ -38,7 +38,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
     //    private String config;
 //    private String reportPath;
     private String jdk;
-    private static String mJarFile = "xh-p3c-pmd-2.0.2.jar";
+    private static String mJarFile = "xh-p3c-pmd-2.0.4.jar";
     private static String jarFile = "/lib/" + mJarFile;
     private static String mAliPmdFile = "ali-pmd.xml";
     private static String aliPmdFile = "/ruleset/" + mAliPmdFile;
