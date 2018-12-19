@@ -23,10 +23,11 @@ import javax.annotation.Nullable;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Sample {@link Builder}.
@@ -44,6 +45,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
     private static String aliPmdFile = "/ruleset/" + mAliPmdFile;
     public final static String platform = System.getProperty("os.name");
     private FireLineScanCodeAction fireLineAction = new FireLineScanCodeAction();
+    private Pattern zhitongyunPattern = null;//检查 zhitongyun 的正则
 
     @DataBoundConstructor
     public FireLineBuilder(@Nonnull FireLineTarget fireLineTarget) {
@@ -61,96 +63,169 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
     }
 
     @Override
-    public void perform(Run<?, ?> build, FilePath workspace, Launcher launcher, TaskListener listener)
+    public void perform(@Nonnull Run<?, ?> build, @Nonnull FilePath workspace, @Nonnull Launcher launcher, @Nonnull TaskListener listener)
             throws InterruptedException, IOException {
         listener.getLogger().println("[FireLineBuilder] perform...");
-        if (fireLineTarget == null) {
-            listener.getLogger().println("fireLineTarget is null");
-        } else {
-            if (fireLineTarget.getCsp()) {
-                initEnv();
-            }
+        if (fireLineTarget.getCsp()) {
+            initEnv();
+        }
 
-            EnvVars env = BuilderUtils.getEnvAndBuildVars(build, listener);
-            //本地项目路径
-            String projectPath = workspace.getRemote();
-            String reportFileNameTmp = fireLineTarget.getReportFileName().substring(0,
-                    fireLineTarget.getReportFileName().lastIndexOf("."));
-            String jarPath = null;
-            String ruleSetPath = null;
-            String cmd = null;
-            String buildWithParameter = fireLineTarget.getBuildWithParameter();
-            buildWithParameter = VariableReplacerUtil.checkEnvVars(build, listener, buildWithParameter);
+        EnvVars env = BuilderUtils.getEnvAndBuildVars(build, listener);
+        //本地项目路径
+        String projectPath = workspace.getRemote();
+        String reportFileNameTmp = fireLineTarget.getReportFileName().substring(0,
+                fireLineTarget.getReportFileName().lastIndexOf("."));
+        String jarPath = null;
+        String ruleSetPath = null;
+        String cmd = null;
+        String buildWithParameter = fireLineTarget.getBuildWithParameter();
+        buildWithParameter = VariableReplacerUtil.checkEnvVars(build, listener, buildWithParameter);
 
-            if (fireLineTarget.getCsp()) {
-                listener.getLogger().println("CSP=" + System.getProperty("hudson.model.DirectoryBrowserSupport.CSP"));
-            }
-            jdk = fireLineTarget.getJdk();
-            listener.getLogger().println("[FireLineBuilder] jdk:" + jdk);
-            // add actions
-            if (null != fireLineAction) {
-                //change by hc:隐藏动作
+        if (fireLineTarget.getCsp()) {
+            listener.getLogger().println("CSP=" + System.getProperty("hudson.model.DirectoryBrowserSupport.CSP"));
+        }
+        jdk = fireLineTarget.getJdk();
+        listener.getLogger().println("[FireLineBuilder] jdk:" + jdk);
+        // add actions
+        if (null != fireLineAction) {
+            //change by hc:隐藏动作
 //                build.addAction(fireLineAction);
-            }
-            // Set JDK version
-            computeJdkToUse(build, workspace, listener, env);
-            // get path of fireline.jar
-            jarPath = getFireLineJar(listener);
-            ruleSetPath = getRulesetFile(listener);
-            listener.getLogger().println("[FireLineBuilder] jarPath:" + jarPath + ", ruleSetPath=" + ruleSetPath);
-            // check params
-            listener.getLogger().println("[FireLineBuilder] projectPath:" + projectPath);
-            if (!FileUtils.existFile(projectPath)) {
-                listener.getLogger().println("The path of project ：" + projectPath + "can't be found.");
-            }
+        }
+        // Set JDK version
+        computeJdkToUse(build, workspace, listener, env);
+        // get path of fireline.jar
+        jarPath = getFireLineJar(listener);
+        ruleSetPath = getRulesetFile(listener);
+        listener.getLogger().println("[FireLineBuilder] jarPath:" + jarPath + ", ruleSetPath=" + ruleSetPath);
+        // check params
+        listener.getLogger().println("[FireLineBuilder] projectPath:" + projectPath);
+        if (!FileUtils.existFile(projectPath)) {
+            listener.getLogger().println("[ERROR] The path of project ：" + projectPath + "can't be found.");
+            return;
+        }
 
-//            if (fireLineTarget.getJvm() != null) {
-//                cmd = "java " + fireLineTarget.getJvm() + " -jar " + jarPath + " -s=" + projectPath + " -r="
-//                        + reportPath + " reportFileName=" + reportFileNameTmp;
-//            } else {
-//                cmd = "java " + " -jar " + jarPath + " -s=" + projectPath + " -r="
-//                        + reportPath + " reportFileName=" + reportFileNameTmp;
-//            }
-//            listener.getLogger().println("[FireLineBuilder] cmd:" + cmd);
-//            if (config != null) {
-//                File confFile = new File(reportPath + File.separator + "config.xml");
-//                FileUtils.createXml(confFile, config);
-//                if (confFile.exists() && !confFile.isDirectory()) {
-//                    cmd = cmd + " config=" + confFile;
-//                }
-//            }
+        //检查 build.gradle 文件是否存在没有使用 dependence 文件的情况
+        boolean b = checkDependence(listener, projectPath);
+        if (fireLineTarget.getBlockBuild() && !b) {
+            build.setResult(Result.FAILURE);
+            listener.getLogger().println(
+                    "[ERROR] build.gradle use component do not come from  dependence folder and set build result to FAILURE");
+            return;
+        }
 
-            if (buildWithParameter != null && buildWithParameter.contains("false")) {
-                listener.getLogger().println("Build without FireLine !!!");
-            } else {
-                String pmdXmlFilePath = projectPath + "/pmd.xml";
-                if (new File(jarPath).exists()) {
-                    listener.getLogger().println("FireLine start scanning...");
-                    //add 1105: 查看文件下的所有 src 文件
-                    String destFilePath = getDestFileList(projectPath);
-                    //listener.getLogger().println("FireLine command="+cmd);
-                    //使用  pmd 进行线上扫描
+        if (buildWithParameter != null && buildWithParameter.contains("false")) {
+            listener.getLogger().println("Build without FireLine !!!");
+        } else {
+            String pmdXmlFilePath = projectPath + "/pmd.xml";
+            if (new File(jarPath).exists()) {
+                listener.getLogger().println("FireLine start scanning...");
+                //add 1105: 查看文件下的所有 src 文件
+                String destFilePath = getDestFileList(projectPath);
+                //listener.getLogger().println("FireLine command="+cmd);
+                //使用  pmd 进行线上扫描
 //                    cmd = "java -cp"+jarPath +" net.sourceforge.pmd.PMD -d "+projectPath + " -R java-xh-comment -f html -r report/pmd.html";
 //                    cmd = "java " + "" + " -jar " + jarPath + " -d " + projectPath + " -R java-xh-jenkins-block -f xml -r " + pmdXmlFilePath;
-                    cmd = "java -jar " + jarPath + " -d " + destFilePath + " -R " + ruleSetPath + " -f xml -r " + pmdXmlFilePath;
-                    listener.getLogger().println("[FireLineBuilder] cmd:" + cmd);
-                    exeCmd(cmd, listener);
-                    // if block number of report is not 0,then this build is set Failure.
-                    if (fireLineTarget.getBlockBuild()) {
-                        int blockNum = getBlockNum(pmdXmlFilePath, listener);
-                        listener.getLogger().println("[FireLineBuilder] blockNum:" + blockNum);
-                        if (blockNum != 0) {
-                            build.setResult(Result.FAILURE);
-                            listener.getLogger().println(
-                                    "[ERROR] There are some defects of \"Block\" level and set build result to FAILURE");
-                        }
+                cmd = "java -jar " + jarPath + " -d " + destFilePath + " -R " + ruleSetPath + " -f xml -r " + pmdXmlFilePath;
+                listener.getLogger().println("[FireLineBuilder] cmd:" + cmd);
+                exeCmd(cmd, listener);
+                // if block number of report is not 0,then this build is set Failure.
+                if (fireLineTarget.getBlockBuild()) {
+                    int blockNum = getBlockNum(pmdXmlFilePath, listener);
+                    listener.getLogger().println("[FireLineBuilder] blockNum:" + blockNum);
+                    if (blockNum != 0) {
+                        build.setResult(Result.FAILURE);
+                        listener.getLogger().println(
+                                "[ERROR] There are some defects of \"Block\" level and set build result to FAILURE");
                     }
-                    listener.getLogger().println("FireLine report path: " + pmdXmlFilePath);
-                } else {
-                    listener.getLogger().println(pmdXmlFilePath + " does not exist!!");
+                }
+                listener.getLogger().println("[FireLineBuilder] FireLine report path: " + pmdXmlFilePath);
+            } else {
+                listener.getLogger().println(pmdXmlFilePath + " does not exist!!");
+            }
+        }
+    }
+
+    /**
+     * 检查 Dependence 依赖
+     * 1. 查找所有 build.gradle 文件
+     * 2. 读取 build.gradle 文件内容
+     * 3. 正则匹配，检查是否存在 "com.zhitongyun:"
+     *
+     * @param projectPath 项目地址
+     * @return 检查通过，返回 true
+     */
+    private boolean checkDependence(@Nonnull TaskListener listener, @Nonnull String projectPath) {
+        boolean result = true;
+        File file = new File(projectPath);
+        if (!file.exists()) {
+            listener.getLogger().println("[ERROR] projectPath is not exist");
+            return false;
+        }
+        //遍历文件夹,获取所有 build.gradle 文件
+        File[] files = file.listFiles();
+        if (files == null) {
+            listener.getLogger().println("[ERROR] projectPath folder have not sub files");
+            return false;
+        }
+        String destFileName = "build.gradle";
+        ArrayList<File> destFiles = new ArrayList<>();
+        for (int i = 0; i < files.length; i++) {
+            File fileTmp = files[i];
+            //剔除文件
+            if (!file.exists() || !fileTmp.isDirectory()) {
+                continue;
+            }
+            File[] subFiles = fileTmp.listFiles();
+            if (subFiles == null) {
+                continue;
+            }
+            for (int j = 0; j < subFiles.length; j++) {
+                File subFileTmp = subFiles[j];
+                String subFileTmpName = subFileTmp.getName();
+                if (destFileName.equals(subFileTmpName)) {
+//                    listener.getLogger().println("[FireLineBuilder] subFileTmp: " + subFileTmp.getPath());
+                    destFiles.add(subFileTmp);
                 }
             }
         }
+        listener.getLogger().println("[FireLineBuilder] destFiles: " + destFiles.toString());
+
+        //检查所有 build.gradle 文件内容
+        BufferedReader bufferedReader = null;
+        String s;
+
+        for (int i = 0; i < destFiles.size(); i++) {
+            File destFile = destFiles.get(i);
+            try {
+                // file -> fileInputStream -> InputStreamReader -> BufferedReader
+                FileInputStream fileInputStream = new FileInputStream(destFile);
+                InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+                bufferedReader = new BufferedReader(inputStreamReader);
+//                listener.getLogger().println("dependence.gradle:"+ destFile.getPath());
+                while ((s = bufferedReader.readLine()) != null) {
+//                    listener.getLogger().println("dependence.gradle:" + s);
+                    if (zhitongyunPattern == null) {
+                        zhitongyunPattern = Pattern.compile(".*com\\.zhitongyun:.*");
+                    }
+                    Matcher matcher = zhitongyunPattern.matcher(s);
+                    if (matcher.find()) {
+                        listener.getLogger().println("[ERROR] build.gradle:" + s);
+                        result = false;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                if (bufferedReader != null) {
+                    try {
+                        bufferedReader.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+        return result;
     }
 
     /**
@@ -195,14 +270,14 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                 }
             }
         }
-        if(destFileList.size() == 0){
+        if (destFileList.size() == 0) {
             //上述一串操作没有找到，此处用作兜底
             destFileList.add(projectPath);
         }
         //此处 list -> String
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < destFileList.size(); i++) {
-            if(i != 0){
+            if (i != 0) {
                 stringBuilder.append(",");
             }
             stringBuilder.append(destFileList.get(i));
@@ -235,30 +310,6 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                 p.destroy();
             }
         }
-    }
-
-    private int getBlockNumOld(String reportPath, String reportFileName) {
-        String xmlPath = null;
-        DocumentBuilderFactory foctory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder;
-        if (reportFileName != null && reportPath != null) {
-            xmlPath = reportPath + File.separator + reportFileName + ".xml";
-            try {
-                builder = foctory.newDocumentBuilder();
-                Document doc = builder.parse(new File(xmlPath));
-                NodeList nodeLists = doc.getElementsByTagName("blocknum");
-                if (nodeLists != null && nodeLists.getLength() > 0) {
-                    org.w3c.dom.Node node = nodeLists.item(0);
-                    if (node != null) {
-                        return Integer.parseInt(node.getTextContent());
-                    }
-                }
-            } catch (ParserConfigurationException | SAXException | IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-        return 0;
     }
 
     /**
@@ -337,7 +388,6 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
             try {
                 JarCopy.copyJarResource(jarFile, newPath);
             } catch (Exception e) {
-                // TODO 自动生成的 catch 块
                 e.printStackTrace();
             }
         }
