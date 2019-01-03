@@ -3,10 +3,14 @@
 xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
 
 <!--BlockBuild-->
-	<f:entry field="blockBuild" title="Block问题控制构建状态:&lt;br / &gt;(If Block rules make build fail)">
-		<f:booleanRadio default="false"/>
-	</f:entry>
+
 <f:advanced>
+    <f:entry field="blockBuild" title="Block问题控制构建状态:&lt;br / &gt;(If Block rules make build fail)">
+		<f:booleanRadio default="true"/>
+	</f:entry>
+	<f:entry field="dependenceCheck" title="dependence 检查控制构建状态:&lt;br / &gt;(If Dependence check make build fail)">
+    		<f:booleanRadio default="false"/>
+    	</f:entry>
     <!-- 暂时将配置页面隐藏-->
     <f:entry title="结果报告路径:&lt;br / &gt;(Report path)" field="reportPath">
         <f:textbox default="${descriptor.defaultReportPath()}"/>

@@ -106,10 +106,10 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
 
         //检查 build.gradle 文件是否存在没有使用 dependence 文件的情况
         boolean b = checkDependence(listener, projectPath);
-        if (fireLineTarget.getBlockBuild() && !b) {
+        if (fireLineTarget.getDependenceCheck() && !b) {
             build.setResult(Result.FAILURE);
             listener.getLogger().println(
-                    "[ERROR] build.gradle use component do not come from  dependence folder and set build result to FAILURE");
+                    "[ERROR] The components of build.gradle using  do not come from  dependence folder and set build result to FAILURE");
             return;
         }
 

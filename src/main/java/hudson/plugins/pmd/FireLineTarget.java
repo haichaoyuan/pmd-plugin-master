@@ -16,6 +16,7 @@ import java.io.InputStream;
 
 public class FireLineTarget extends AbstractDescribableImpl<FireLineTarget> {
 	private final boolean blockBuild;
+	private final boolean dependenceCheck;
 	private final boolean csp;
 	private final String configuration;
 	private final String reportPath;
@@ -26,9 +27,10 @@ public class FireLineTarget extends AbstractDescribableImpl<FireLineTarget> {
 	private final String buildWithParameter;
 
 	@DataBoundConstructor
-	public FireLineTarget(boolean csp, boolean blockBuild, String configuration, String reportPath, String reportFileName, String buildWithParameter, String jdk, String jvm) {
+	public FireLineTarget(boolean csp, boolean blockBuild, boolean dependenceCheck, String configuration, String reportPath, String reportFileName, String buildWithParameter, String jdk, String jvm) {
 		this.csp=csp;
 		this.blockBuild=blockBuild;
+		this.dependenceCheck=dependenceCheck;
 		this.configuration = StringUtils.trim(configuration);
 		this.reportPath = StringUtils.trim(reportPath);
 		this.reportFileName = StringUtils.trim(reportFileName);
@@ -43,6 +45,10 @@ public class FireLineTarget extends AbstractDescribableImpl<FireLineTarget> {
 	
 	public boolean getBlockBuild() {
 		return this.blockBuild;
+	}
+
+	public boolean getDependenceCheck() {
+		return this.dependenceCheck;
 	}
 
 	public String getConfiguration() {
