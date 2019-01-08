@@ -1,9 +1,6 @@
 package hudson.plugins.pmd;
 
-import hudson.EnvVars;
-import hudson.Extension;
-import hudson.FilePath;
-import hudson.Launcher;
+import hudson.*;
 import hudson.model.*;
 import hudson.plugins.pmd.fireline.*;
 import hudson.tasks.BuildStepDescriptor;
@@ -34,7 +31,7 @@ import java.util.regex.Pattern;
  *
  * @author weihao
  */
-public class FireLineBuilder extends Builder implements SimpleBuildStep {
+public class FireLineBuilder extends Builder {
     private final FireLineTarget fireLineTarget;
     //    private String config;
 //    private String reportPath;
@@ -63,8 +60,11 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
     }
 
     @Override
-    public void perform(@Nonnull Run<?, ?> build, @Nonnull FilePath workspace, @Nonnull Launcher launcher, @Nonnull TaskListener listener)
-            throws InterruptedException, IOException {
+    public boolean perform(AbstractBuild<?, ?> build, Launcher launcher, BuildListener listener) throws InterruptedException, IOException {
+        FilePath workspace = build.getWorkspace();
+        if (workspace == null) {
+            throw new AbortException("no workspace for " + build);
+        }
         listener.getLogger().println("[FireLineBuilder] perform...");
         if (fireLineTarget.getCsp()) {
             initEnv();
@@ -101,7 +101,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
         listener.getLogger().println("[FireLineBuilder] projectPath:" + projectPath);
         if (!FileUtils.existFile(projectPath)) {
             listener.getLogger().println("[ERROR] The path of project ：" + projectPath + "can't be found.");
-            return;
+            return false;
         }
 
         //检查 build.gradle 文件是否存在没有使用 dependence 文件的情况
@@ -110,7 +110,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
             build.setResult(Result.FAILURE);
             listener.getLogger().println(
                     "[ERROR] The components of build.gradle using  do not come from  dependence folder and set build result to FAILURE");
-            return;
+            return false;
         }
 
         if (buildWithParameter != null && buildWithParameter.contains("false")) {
@@ -136,6 +136,7 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                         build.setResult(Result.FAILURE);
                         listener.getLogger().println(
                                 "[ERROR] There are some defects of \"Block\" level and set build result to FAILURE");
+                        return false;
                     }
                 }
                 listener.getLogger().println("[FireLineBuilder] FireLine report path: " + pmdXmlFilePath);
@@ -143,7 +144,9 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
                 listener.getLogger().println(pmdXmlFilePath + " does not exist!!");
             }
         }
+        return true;
     }
+
 
     /**
      * 检查 Dependence 依赖
@@ -427,7 +430,6 @@ public class FireLineBuilder extends Builder implements SimpleBuildStep {
             try {
                 JarCopy.copyJarResource(aliPmdFile, newPath);
             } catch (Exception e) {
-                // TODO 自动生成的 catch 块
                 e.printStackTrace();
             }
         }

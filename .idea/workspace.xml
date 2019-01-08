@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9b67035-5aa5-47e3-aa6b-3c0b1bf82add" name="Default Changelist" comment="">
+    <list default="true" id="b9b67035-5aa5-47e3-aa6b-3c0b1bf82add" name="Default Changelist" comment="1. [版本] 4.0.10&#10;2. [bug] 检查不通知，直接任务不进行">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.6.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +25,7 @@
     <session id="-224253440">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="5" />
           <entry key="project.open.time.12" value="2" />
@@ -43,7 +43,7 @@
         <counts>
           <entry key="Jenkinsfile" value="2" />
           <entry key="checkstyle" value="3" />
-          <entry key="class" value="29" />
+          <entry key="class" value="35" />
           <entry key="fbprefs" value="2" />
           <entry key="gitignore" value="7" />
           <entry key="gradle" value="4" />
@@ -66,7 +66,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="29" />
+          <entry key="CLASS" value="35" />
           <entry key="Groovy" value="4" />
           <entry key="HTML" value="27" />
           <entry key="IDEA_MODULE" value="6" />
@@ -82,22 +82,22 @@
         <counts>
           <entry key="gitignore" value="22" />
           <entry key="gradle" value="12" />
-          <entry key="java" value="3293" />
+          <entry key="java" value="3325" />
           <entry key="jelly" value="98" />
           <entry key="md" value="7" />
           <entry key="properties" value="1" />
-          <entry key="txt" value="328" />
-          <entry key="xml" value="193" />
+          <entry key="txt" value="355" />
+          <entry key="xml" value="196" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="12" />
-          <entry key="JAVA" value="3293" />
+          <entry key="JAVA" value="3325" />
           <entry key="Markdown" value="7" />
-          <entry key="PLAIN_TEXT" value="448" />
+          <entry key="PLAIN_TEXT" value="475" />
           <entry key="Properties" value="1" />
-          <entry key="XML" value="193" />
+          <entry key="XML" value="196" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -105,11 +105,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -140,11 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+            <state relative-caret-position="574">
+              <caret line="522" column="14" selection-start-line="522" selection-start-column="14" selection-end-line="522" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1745#1746#0" expanded="true" />
@@ -161,15 +161,66 @@
                 <element signature="method#getJdkFromJenkins#0;class#FireLineBuilder#0" />
                 <element signature="method#checkFireLineJdk#0;class#FireLineBuilder#0" />
                 <element signature="method#getProjectAction#0;class#FireLineBuilder#0" />
-                <element signature="class#DescriptorImpl#0;class#FireLineBuilder#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xh-pmd.iml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/model/Descriptor.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="432" column="33" selection-start-line="432" selection-start-column="33" selection-end-line="432" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/jenkins/tasks/SimpleBuildStep.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+              <folding>
+                <element signature="class#LastBuildActionFactory#0;class#SimpleBuildStep#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/tasks/BuildStep.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/tasks/Builder.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/tasks/BuildStepCompatibilityLayer.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="37" column="44" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/model/Run.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="126" column="61" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="61" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -186,7 +237,6 @@
       <find>ruleset</find>
       <find>rulesets</find>
       <find>Builder</find>
-      <find>perform</find>
       <find>DEFAULT_PATTERN</find>
       <find>Deprecated</find>
       <find>pmd-24x24.p</find>
@@ -206,6 +256,7 @@
       <find>exeCmd</find>
       <find>jdk</find>
       <find>zhitongyunPattern</find>
+      <find>perform</find>
       <find>fireLineTarget</find>
     </findStrings>
   </component>
@@ -245,9 +296,9 @@
         <option value="$PROJECT_DIR$/work/jobs/JenkinsAndroidDemo2/workspace/gradle/build.gradle" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineTarget.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/config.jelly" />
         <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -290,9 +341,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
+    <option name="x" value="52" />
     <option name="y" value="23" />
-    <option name="width" value="1558" />
+    <option name="width" value="1044" />
     <option name="height" value="973" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -323,28 +374,7 @@
             <path>
               <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
               <item name="pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pmd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -354,7 +384,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="pmd-2&#9;FILE&#9;file:///Users/hc/IdeaProjects/gitProject/pmd-plugin-master/src/main/resources/lib/xh-p3c-pmd-2.0.0.jar&#10;pmd&#9;FILE&#9;file:///Users/hc/IdeaProjects/gitProject/pmd-plugin-master/src/main/webapp/icons/pmd-48x48.png&#10;pmd-&#9;FILE&#9;file:///Users/hc/IdeaProjects/gitProject/pmd-plugin-master/src/main/webapp/icons/pmd-48x48.png&#10;PmdWorkflowTest&#9;PSI&#9;JAVA://hudson.plugins.pmd.PmdWorkflowTest" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546494867499" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546593904814" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -542,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546482144699</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1. [版本] 4.0.9&#10;2. 换jar xh-p3c-pmd-2.0.6.jar">
+      <created>1546494910401</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1546494910401</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -572,8 +609,39 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="23" width="1558" height="973" extended-state="0" />
+    <frame x="328" y="23" width="1044" height="973" extended-state="0" />
+    <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.24631101" visible="true" weight="0.3283433" />
+      <window_info id="Structure" order="1" sideWeight="0.753689" side_tool="true" weight="0.27934936" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32690126" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49941587" weight="0.34392735" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4449489" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4971623" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005841" side_tool="true" weight="0.4377551" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.8331441" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3280363" />
+      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32970297" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49725273" weight="0.24786325" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" visible="true" weight="0.58183634" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5050505" side_tool="true" weight="0.24591121" />
+    </layout>
+    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.24631101" visible="true" weight="0.21701847" />
       <window_info id="Structure" order="1" sideWeight="0.753689" side_tool="true" weight="0.27934936" />
       <window_info id="Image Layers" order="2" />
@@ -583,7 +651,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32690126" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49941587" visible="true" weight="0.4858116" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49941587" visible="true" weight="0.34392735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4449489" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -600,36 +668,6 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" visible="true" weight="0.38456464" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5050505" side_tool="true" weight="0.24591121" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.24631101" visible="true" weight="0.1910867" />
-      <window_info id="Structure" order="1" sideWeight="0.753689" side_tool="true" weight="0.27934936" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3280363" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49941587" visible="true" weight="0.4377551" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4449489" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.4971623" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005841" side_tool="true" weight="0.4377551" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3291714" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3280363" />
-      <window_info anchor="bottom" id="Thumbnails" order="11" weight="0.32970297" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49725273" weight="0.24786325" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" visible="true" weight="0.21794872" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5050505" side_tool="true" weight="0.24591121" />
     </layout-to-restore>
@@ -691,7 +729,10 @@
     <MESSAGE value="1. [功能] 检查 Dependence 依赖,&#10;1.1 查找所有 build.gradle 文件&#10;1.2 读取 build.gradle 文件内容&#10;1.3 正则匹配，检查是否存在 &quot;com.zhitongyun:&quot;&#10;        *" />
     <MESSAGE value="1. [版本] 4.0.7&#10;2. 换jar xh-p3c-pmd-2.0.5.jar" />
     <MESSAGE value="1. [版本] 4.0.8&#10;2. 增加新的选项 Dependence 检查，用来控制 Dependence 检查&#10;3. 将 代码检查影响打包开关和 Dependence 检查开发都移入advance 里面" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. [版本] 4.0.8&#10;2. 增加新的选项 Dependence 检查，用来控制 Dependence 检查&#10;3. 将 代码检查影响打包开关和 Dependence 检查开发都移入advance 里面" />
+    <MESSAGE value="1. [版本] 4.0.9&#10;2. 换jar xh-p3c-pmd-2.0.5.jar" />
+    <MESSAGE value="1. [版本] 4.0.9&#10;2. 换jar xh-p3c-pmd-2.0.6.jar" />
+    <MESSAGE value="1. [版本] 4.0.10&#10;2. [bug] 检查不通知，直接任务不进行" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. [版本] 4.0.10&#10;2. [bug] 检查不通知，直接任务不进行" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -707,36 +748,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/jvnet/hudson/plugins/analysis-core/1.94/analysis-core-1.94.jar!/hudson/plugins/analysis/core/HealthDescriptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/site/apidocs/index.html" />
-    <entry file="file://$MAVEN_REPOSITORY$/org/jenkins-ci/plugins/plugin/2.35/plugin-2.35.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="399" column="8" selection-start-line="399" selection-start-column="8" selection-end-line="399" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/jvnet/hudson/plugins/analysis-pom/1.68/analysis-pom-1.68.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="137" column="8" selection-start-line="137" selection-start-column="8" selection-end-line="137" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-classes/jacoco/hudson/plugins/pmd/Messages.class" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="2259" column="24" selection-start-line="2259" selection-start-column="24" selection-end-line="2259" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/work/jobs/JenkinsAndroidDemo2/workspace/pmd.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -970,10 +981,17 @@
     <entry file="file://$PROJECT_DIR$/xh-pmd.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/config.jelly">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/model/Run.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="126" column="61" selection-start-line="126" selection-start-column="61" selection-end-line="126" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -992,17 +1010,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/config.jelly">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/tasks/Builder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="102">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/tasks/BuildStep.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/jenkins/tasks/SimpleBuildStep.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <element signature="class#LastBuildActionFactory#0;class#SimpleBuildStep#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/tasks/BuildStepCompatibilityLayer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="37" column="44" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+        <state relative-caret-position="574">
+          <caret line="522" column="14" selection-start-line="522" selection-start-column="14" selection-end-line="522" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1745#1746#0" expanded="true" />
@@ -1019,8 +1061,21 @@
             <element signature="method#getJdkFromJenkins#0;class#FireLineBuilder#0" />
             <element signature="method#checkFireLineJdk#0;class#FireLineBuilder#0" />
             <element signature="method#getProjectAction#0;class#FireLineBuilder#0" />
-            <element signature="class#DescriptorImpl#0;class#FireLineBuilder#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jenkins-ci/main/jenkins-core/1.625.1/jenkins-core-1.625.1.jar!/hudson/model/Descriptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="432" column="33" selection-start-line="432" selection-start-column="33" selection-end-line="432" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
         </state>
       </provider>
     </entry>
