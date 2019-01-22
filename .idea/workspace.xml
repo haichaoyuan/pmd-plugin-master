@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b9b67035-5aa5-47e3-aa6b-3c0b1bf82add" name="Default Changelist" comment="1. [版本] 4.0.10&#10;2. [bug] 检查不通过，直接任务不进行下去">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="b9b67035-5aa5-47e3-aa6b-3c0b1bf82add" name="Default Changelist" comment="1. [版本] 4.0.11&#10;2. [jar] 换成 xh-p3c-pmd-2.0.7.jar">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.7.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.7.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/lib/xh-p3c-pmd-2.0.8.jar" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,17 +107,24 @@
     <session id="-1704722825">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="java" value="1" />
+          <entry key="txt" value="11" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="PLAIN_TEXT" value="11" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -132,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -158,8 +162,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="171" column="9" lean-forward="true" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
+            <state relative-caret-position="272">
+              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getDestFileList#0;class#FireLineBuilder#0" />
@@ -305,8 +309,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineTarget.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd/FireLineTarget/config.jelly" />
-        <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java" />
       </list>
     </option>
   </component>
@@ -329,12 +333,23 @@
           <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Xuehai PMD Plug-in" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+          <item name="hpi" type="36feed69:MavenProjectsStructure$PluginNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="293" />
+    <option name="x" value="274" />
     <option name="y" value="23" />
     <option name="width" value="1044" />
     <option name="height" value="973" />
@@ -345,18 +360,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="pmd" type="58d84e3e:PackageViewProjectNode" />
-              <item name="xh-pmd" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -367,11 +370,6 @@
             <path>
               <item name="jenkins_xh_pmd" type="b2602c69:ProjectViewProjectNode" />
               <item name="jenkins-pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
-              <item name=".settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jenkins_xh_pmd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jenkins-pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -385,20 +383,22 @@
               <item name="jenkins-pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jenkins_xh_pmd" type="b2602c69:ProjectViewProjectNode" />
               <item name="jenkins-pmd-plugin-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pmd" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -408,11 +408,20 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/lib" />
+      <recent name="$PROJECT_DIR$/work/jobs/test/workspace" />
+      <recent name="$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="hudson.plugins.pmd" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="hudson.plugins.pmd" />
+      <recent name="hudson.plugins.pmd.fireline" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/lib" />
@@ -420,15 +429,6 @@
       <recent name="$PROJECT_DIR$/work/jobs/JenkinsAndroidDemo2/workspace/gradle" />
       <recent name="$PROJECT_DIR$/src/main/resources/ruleset" />
       <recent name="$PROJECT_DIR$/src/main/webapp/icons" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="hudson.plugins.pmd" />
-      <recent name="hudson.plugins.pmd.fireline" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/lib" />
-      <recent name="$PROJECT_DIR$/work/jobs/test/workspace" />
-      <recent name="$PROJECT_DIR$/src/main/resources/hudson/plugins/pmd" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -605,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546910004911</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="1. [版本] 4.0.11&#10;2. [jar] 换成 xh-p3c-pmd-2.0.7.jar">
+      <created>1547112391967</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1547112391967</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -635,8 +642,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="293" y="23" width="1044" height="973" extended-state="0" />
-    <editor active="true" />
+    <frame x="274" y="23" width="1044" height="973" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.24631101" weight="0.3483034" />
       <window_info id="Structure" order="1" sideWeight="0.753689" side_tool="true" weight="0.27934936" />
@@ -647,7 +653,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32690126" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49941587" visible="true" weight="0.34392735" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49941587" visible="true" weight="0.34392735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4449489" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -663,7 +669,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" weight="0.3942116" />
+      <window_info anchor="right" id="Maven Projects" order="6" sideWeight="0.4949495" visible="true" weight="0.3942116" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Coverage" order="8" sideWeight="0.5050505" side_tool="true" weight="0.24591121" />
     </layout>
@@ -759,7 +765,8 @@
     <MESSAGE value="1. [版本] 4.0.9&#10;2. 换jar xh-p3c-pmd-2.0.6.jar" />
     <MESSAGE value="1. [版本] 4.0.10&#10;2. [bug] 检查不通知，直接任务不进行" />
     <MESSAGE value="1. [版本] 4.0.10&#10;2. [bug] 检查不通过，直接任务不进行下去" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. [版本] 4.0.10&#10;2. [bug] 检查不通过，直接任务不进行下去" />
+    <MESSAGE value="1. [版本] 4.0.11&#10;2. [jar] 换成 xh-p3c-pmd-2.0.7.jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. [版本] 4.0.11&#10;2. [jar] 换成 xh-p3c-pmd-2.0.7.jar" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -934,17 +941,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="17">
             <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -955,10 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1462">
           <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
-          <folding>
-            <element signature="e#3011#3012#0" expanded="true" />
-            <element signature="e#3058#3059#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1007,6 +1010,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xh-pmd.iml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineTarget.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1064,17 +1074,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hudson/plugins/pmd/FireLineBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="171" column="9" lean-forward="true" selection-start-line="171" selection-start-column="9" selection-end-line="171" selection-end-column="9" />
+        <state relative-caret-position="272">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getDestFileList#0;class#FireLineBuilder#0" />
